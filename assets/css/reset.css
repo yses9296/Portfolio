@@ -1,0 +1,54 @@
+/*reset*/
+* {margin: 0; padding: 0;}
+a {text-decoration: none; cursor: none;}
+
+/*font*/
+ @font-face {
+    font-family: 'NEXONLv1Gothic';
+    font-weight: 300;
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NEXONLv1Gothic';
+    font-weight: 400;
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-style: normal;
+}
+
+/* mouseCont */
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    font-family: 'NEXONLv1Gothic';
+    cursor: none;
+}
+.cursor {
+    position: absolute;
+    left: 0; top: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    z-index: 9999;
+    background-color: rgba(20, 90, 174, 0.4);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s, opacity 0.2s;
+}
+.cursor.active {
+    opacity: 0.5;
+    transform: scale(3.5);
+    background: rgba(18, 135, 210, 1);
+}
+
+.cursor.active_nav {
+    opacity: 0.7;
+    transform: scale(2);
+    background: orange;
+} 

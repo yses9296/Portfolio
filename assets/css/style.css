@@ -1,0 +1,76 @@
+/*main*/
+#bg {
+    position: relative;
+    cursor: none;
+}
+#bg::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: rgba(80, 190, 180, 0.7);
+    z-index: -1;
+}
+
+/*layout*/
+#mainPage {width: 100%; height: 100vh;  overflow: hidden;
+     background-image: 
+/*         url(https://webstoryboy.github.io/ScriptEffect/webstoryboy/assets/img/bg11.jpg);*/
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+#myProfile {width: 100%; height: 100vh; background: #888;}
+#mySkill {width: 100%; height: 100vh; background: #777;}
+#myProject {width: 100%; height: 100vh; background: #666;}
+#myInfo {width: 100%; height: 100vh; background: #555;}
+
+/*mainPage*/
+#mainPage {position: relative;}
+#mainPage article {
+    position: absolute; top: 50%; left: 50%; width: 700px; height: 100px; 
+    margin-top: -50px; margin-left: -350px; font-size: 60px; font-weight: bold; text-align: center;}
+
+/*myProfile*/
+#myProfile {position: relative;}
+/* padding: 2em; box-sizing: border-box;*/
+#myProfile img {position: absolute; top: 50%; left: 5em; width: 540px; height: 750px; margin-top: -375px; }
+.profile_info {position: absolute; top: 20%; right: 20%; }
+.profile_info h2 {color: #fff; font-size: 2vw; font-weight: bold; }
+.profile_info p {}
+
+/*mySkill*/
+.skill_warp {}
+
+
+/*info*/
+.info_wrap {}
+
+/*paraNav*/
+.paraNav {
+    position: fixed;
+    right: 20px; top: 20px;
+    z-index: 1000;
+    background: rgba(0,0,0,.4);
+    padding: 15px 20px;
+    border-radius: 50px;
+}
+.paraNav li {
+    display: inline-block;
+    list-style: none;
+}
+.paraNav li a {
+    color: #fff;
+    display: inline-block;
+    padding: 5px;
+    width: 100px; height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+ .paraNav li.active a {
+    background: #fff;
+    color: #000;
+    border-radius: 50%;
+}
+
