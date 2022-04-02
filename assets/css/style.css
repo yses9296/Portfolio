@@ -14,9 +14,9 @@
 }
 
 /*layout*/
-#mainPage {width: 100%; height: 100vh;  overflow: hidden;
-     background-image: 
-/*         url(https://webstoryboy.github.io/ScriptEffect/webstoryboy/assets/img/bg11.jpg);*/
+#mainPage {
+    width: 100%; height: 100vh; overflow: hidden;
+    background-image: url(../images/main_bg.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -25,13 +25,17 @@
 #mySkill {width: 100%; height: 100vh; background: #777;}
 #myProject {width: 100%; height: 100vh; background: #666;}
 #myInfo {width: 100%; height: 100vh; background: #555;}
+.content_item {padding: 2em; box-sizing: border-box;}
 
 /*mainPage*/
 #mainPage {position: relative;}
 #mainPage article {
-    position: absolute; top: 50%; left: 50%; width: 700px; height: 100px; 
-    margin-top: -50px; margin-left: -350px; font-size: 60px; font-weight: bold; text-align: center;}
+    position: absolute; top: 50%; left: 50%; width: 1000px; height: 150px; z-index: 110;
+    margin-top: -75px; margin-left: -500px; font-size: 80px; font-weight: bold; text-align: center;}
 
+#mainPage article.back {
+    margin-top: -80px; margin-left: -495px; color: #999; z-index: 100;
+}
 /*myProfile*/
 #myProfile {position: relative;}
 /* padding: 2em; box-sizing: border-box;*/
@@ -43,9 +47,42 @@
 /*mySkill*/
 .skill_warp {}
 
+/*myProject*/
+#myProject {display: flex; align-items: center;}
+#myProject > div {}
+.project_wrap {width: 50%; height: 100%; margin: 0 auto; padding: 2em; box-sizing: border-box; background: #111;}
+.project_img {width: 100%;}
+
+.project_desc {width: 100%; text-align: center;}
+.project_desc h3 {font-size: 2vh;}
+.project_desc a {display: block; width: 100px; height: 40px; margin: 0 auto; background: #111;  color: #fff; line-height: 40px; font-size: 1vw;}
+
 
 /*info*/
-.info_wrap {}
+.info_wrap {width: 100%; height: 100%; background: #111; position: relative;}
+.left_info {position: absolute; width: 50%; height: 100%; top: 0; left: 0; background: #222; padding: 10% 5% 0; box-sizing: border-box;}
+.left_info h2 {font-size: 3vw;}
+.left_info .input_cont {width: 100%; height: 80%; padding: 2em; box-sizing: border-box;}
+
+.left_info .input_cont ul li {display: flex; align-items: center; margin: 1em;}
+.left_info .input_cont ul li a {display: block;}
+.left_info .input_cont ul li span {width: 20%; display: inline-block; margin-right: 5%;  font-size: 2vh;}
+.left_info .input_cont ul li input {width: 75%; height: 2vh; font-size: 1vw; overflow: scroll;}
+.left_info .input_cont ul li:last-child input {width: 100%; height: 30vh;}
+
+.input_cont {position: relative;}
+.input_cont > input {width: 20%; height: 60px; font-size: 1vw; text-align: center; line-height: 60px; background: #111; color: #fff; position: absolute; bottom: 10%; left: 50%; margin-left: -10%;}
+.input_cont > input:hover {background: rgba(255,255,255,0.4);}
+
+.right_info {position: absolute; width: 50%; height: 100%; top: 0; right: 0; background: #333;}
+
+/*
+.info_wrap {width: 70%; height: 100vh; margin: 0 auto; display: flex; align-items: center; background: #999;}
+.info_wrap ul {width: 100%;}
+.info_wrap ul li {float: left; width: 25%;}
+.info_wrap ul li a {display: block; font-size: 1vw;}
+.info_wrap ul li img {width: 50%; display: block;}
+*/
 
 /*paraNav*/
 .paraNav {

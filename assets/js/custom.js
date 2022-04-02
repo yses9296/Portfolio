@@ -12,7 +12,6 @@ $(".paraNav ul li").click(function(e){
 //scroll
 $(window).scroll(function(){
     let scrollTop = $(window).scrollTop();
-    console.log(scrollTop);
     
     $(".content_item").each(function(index){
         if( scrollTop >= $(".content_item").eq(index).offset().top ){
