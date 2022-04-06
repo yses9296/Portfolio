@@ -41,7 +41,4 @@ $(window).scroll(function(){
             $(this).addClass("show");
         }
     });
-    
-    
-    
 });

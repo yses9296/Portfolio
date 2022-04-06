@@ -22,7 +22,6 @@
     background-position: center center;
     background-repeat: no-repeat;
     position: fixed;
-    z-index: -1;
 }
 
 .content_item {
@@ -108,11 +107,19 @@
     display: flex; 
     align-items: center; 
     justify-content: center;
+    flex-direction: column;
 }
+
+#mySkill h1 {
+    width: 60vw; height: 5vh;
+    font-size: 4vh; color: #999;
+    padding: 1em 0;
+}
+
 .skill_warp {
     display: flex; 
     align-items: center; 
-    width: 60vw; height: 80vh; background: #fff;
+    width: 60vw; height: 70vh; background: #fff;
 }
 .skill_warp ul {
     display: flex;
@@ -137,13 +144,13 @@
     padding: 5px 0;
     background: #fff;
     border: 1px solid #dbdbdb;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 .reveal {
+    position: relative;
     opacity: 0;
+    will-change: opacity;
 }
-.reveal {position: relative;}
-
 .reveal::before {
     content: '';
     position: absolute;
@@ -218,8 +225,6 @@
     100% {width: 60%; left: 0;}
 }
 
-
-
 /*myProject*/
 #myProject {
     display: flex; align-items: center;
@@ -252,7 +257,7 @@
 .info_wrap {
     position: relative;
     width: 100%; height: 100%; 
-    background: #111; 
+    color: #111;
 }
 
 /*.left_info*/
@@ -260,11 +265,10 @@
     position: absolute; 
     top: 0; left: 0; 
     width: 50%; height: 100%; 
-    background: #222; 
     padding: 10% 5% 0; 
     box-sizing: border-box;
 }
-.left_info h2 {font-size: 3vw;}
+.left_info h2 {font-size: 3vw; font-weight: bold;}
 
 .input_cont {
     position: relative; 
@@ -284,7 +288,7 @@
     bottom: 10%; left: 50%; 
     margin-left: -10%;
 }
-.input_cont > input:hover {background: rgba(255,255,255,0.4);}
+.input_cont > input:hover {background: rgba(0,0,0,0.4);}
 
 .input_cont ul li {
     display: flex; 
@@ -305,17 +309,48 @@
     font-size: 1vw; 
     overflow: scroll;
 }
-.input_cont ul li:last-child input {width: 100%; height: 30vh;}
-
+.input_cont ul li:last-child textarea {
+    width: 100%; height: 30vh;
+    font-size: 1vw;
+    overflow: hidden;
+    resize: none;
+}
 
 /*right_info*/
 .right_info {
     position: absolute; 
     width: 50%; height: 100%; 
     top: 0; right: 0; 
-    background: #333;
+/*    background: #999;*/
+}
+.right_info > div {
+    width: 100%; height: 50%; 
+    float: left;
+    display: flex; 
+    align-items: center;
 }
 
+.ru_info a {
+    display: block;
+    font-size: 5vh;
+    color: #3E3E3E;
+}
+.ru_info a:hover {
+    color: rgba(100, 196, 243, 0.5);
+}
+
+.rd_info .github {
+    display: block;
+    font-size: 0;
+    width: 100px; height: 100px;
+    background-image: url(../images/github_logo.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    z-index: 100;
+}
+.rd_info .github:hover {opacity: .6;}
 /*paraNav*/
 .paraLeft {
     position: fixed;

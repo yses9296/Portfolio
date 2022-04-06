@@ -10,8 +10,20 @@ $("article").hover(function(){
 }, function(){
     cursor.removeClass("active");
 });
+$(".paraLeft").hover(function(){
+    cursor.addClass("active_nav");
+}, function(){
+    cursor.removeClass("active_nav");
+});
 $(".paraNav ul li").hover(function(){
     cursor.addClass("active_nav");
 }, function(){
     cursor.removeClass("active_nav");
+});
+
+//sns_hover
+$(".github").hover(function(){
+    cursor.addClass("active");
+}, function(){
+    cursor.removeClass("active");
 });
