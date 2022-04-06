@@ -2,6 +2,7 @@
 #bg {
     position: relative;
     cursor: none;
+    
 }
 #bg::before {
     content: "";
@@ -9,82 +10,337 @@
     left: 0;
     top: 0;
     width: 100%;
-    background-color: rgba(80, 190, 180, 0.7);
-    z-index: -1;
 }
 
 /*layout*/
 #mainPage {
-    width: 100%; height: 100vh; overflow: hidden;
+    width: 100%; 
+    height: 100vh; 
+    overflow: hidden;
     background-image: url(../images/main_bg.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    position: fixed;
+    z-index: -1;
 }
-#myProfile {width: 100%; height: 100vh; background: #888;}
-#mySkill {width: 100%; height: 100vh; background: #777;}
-#myProject {width: 100%; height: 100vh; background: #666;}
-#myInfo {width: 100%; height: 100vh; background: #555;}
-.content_item {padding: 2em; box-sizing: border-box;}
+
+.content_item {
+    width: 100%; 
+    height: 100vh;
+    padding: 2em; 
+    box-sizing: border-box; 
+    background-color: rgba(219, 249, 255, 0.3);
+}
 
 /*mainPage*/
 #mainPage {position: relative;}
 #mainPage article {
-    position: absolute; top: 50%; left: 50%; width: 1000px; height: 150px; z-index: 110;
-    margin-top: -75px; margin-left: -500px; font-size: 80px; font-weight: bold; text-align: center;}
+    position: absolute; 
+    top: 50%; left: 50%; 
+    width: 1000px; height: 150px; 
+    z-index: 110;
+    margin-top: -75px; 
+    margin-left: -500px; 
+    font-size: 80px; 
+    font-weight: bold; 
+    text-align: center;
+}
 
 #mainPage article.back {
-    margin-top: -80px; margin-left: -495px; color: #999; z-index: 100;
+    margin-top: -80px; 
+    margin-left: -495px; 
+    color: #999; 
+    z-index: 100;
 }
+
 /*myProfile*/
-#myProfile {position: relative;}
-/* padding: 2em; box-sizing: border-box;*/
-#myProfile img {position: absolute; top: 50%; left: 5em; width: 540px; height: 750px; margin-top: -375px; }
-.profile_info {position: absolute; top: 20%; right: 20%; }
-.profile_info h2 {color: #fff; font-size: 2vw; font-weight: bold; }
-.profile_info p {}
+#myProfile {
+    position: relative;
+}
+#myProfile > div {float: left;}
+
+/*profile_left*/
+.profile_left {
+    width: 40%; height: 93vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile_left .pImg {
+    width: 25vw;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+    transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+}
+.profile_left .pImg img{
+    position: absolute; 
+    top: -5%; left: -5%; 
+    width: 110%; height: 110%; 
+    object-fit: cover;
+    transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+}
+.profile_left .pImg:hover img {
+    transform: scale(1.025);
+    filter: grayscale(0%)
+}
+
+/*profile_right*/
+.profile_right {width: 60%; height: 100%;}
+
+.profile_info {
+    width: 100%; height: 70%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.additional_info {width: 100%; height: 30%;}
+
+.profile_info h2 {color: #252525; font-size: 2.5vw; font-weight: bold; padding: 2em 0;}
+.profile_info h2 strong {font-size: 3vw;}
+.profile_info p {color: #404040; font-size: 1vw; line-height: 80px;}
 
 /*mySkill*/
-.skill_warp {}
+#mySkill {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+.skill_warp {
+    display: flex; 
+    align-items: center; 
+    width: 60vw; height: 80vh; background: #fff;
+}
+.skill_warp ul {
+    display: flex;
+    flex-direction: column;
+}
+.skill_warp ul {
+    width: 100%;
+    padding: 1em;
+}
+
+.skill_warp ul li {
+    width: 100%;
+    color: #444; 
+    font-size: 40px;
+    line-height: 40px;
+    padding: 20px 0;
+}
+.skill_warp ul li span {
+    float: right;
+    width: 35vw;
+    height: 30px;
+    padding: 5px 0;
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    box-sizing: border-box;
+}
+.reveal {
+    opacity: 0;
+}
+.reveal {position: relative;}
+
+.reveal::before {
+    content: '';
+    position: absolute;
+    right: 0; top: 0;
+    width: 0; height: 100%;
+    z-index: 100;
+    background-color: #999;
+}
+.reveal.show {
+    animation: opacity 1000ms linear forwards;
+}
+
+.rv_01.show::before {
+    animation: reveal_90 1000ms cubic-bezier(0.51, 0.29, 0.12, 1.1) forwards; 
+/*    cubic-bezier(0.01, 0.63, 0.28, 1.26)*/
+}
+.rv_02.show::before {
+    animation: reveal_90 1000ms cubic-bezier(0.51, 0.29, 0.12, 1.1) forwards;
+}
+.rv_03.show::before {
+    animation: reveal_80 1000ms cubic-bezier(0.51, 0.29, 0.12, 1.1) forwards;
+}
+.rv_04.show::before {
+    animation: reveal_80 1000ms cubic-bezier(0.51, 0.29, 0.12, 1.1) forwards;
+}
+.rv_05.show::before {
+    animation: reveal_60 1000ms cubic-bezier(0.51, 0.29, 0.12, 1.1) forwards;
+}
+.rv_06.show::before {
+    animation: reveal_70 1000ms cubic-bezier(0.51, 0.29, 0.12, 1.1) forwards;
+}
+.rv_07.show::before {
+    animation: reveal_60 1000ms cubic-bezier(0.51, 0.29, 0.12, 1.1) forwards;
+}
+
+
+@keyframes opacity {
+    0%   {opacity: 0;}
+    60%  {opacity: 0;}
+    70%  {opacity: 1;}
+    100% {opacity: 1;}
+}
+@keyframes reveal_100 {
+    0%   {width: 0;    left: 0;}
+    50%  {width: 50%;  left: 0;}
+    80%  {width: 100%; left: 0;}
+    100% {width: 100%; left: 0;}
+}
+@keyframes reveal_90 {
+    0%   {width: 0;    left: 0;}
+    50%  {width: 30%;  left: 0;}
+    80%  {width: 70%; left: 0;}
+    100% {width: 90%; left: 0;}
+}
+
+@keyframes reveal_80 {
+    0%   {width: 0;    left: 0;}
+    50%  {width: 30%;  left: 0;}
+    80%  {width: 70%; left: 0;}
+    100% {width: 80%; left: 0;}
+}
+@keyframes reveal_70 {
+    0%   {width: 0;    left: 0;}
+    50%  {width: 30%;  left: 0;}
+    80%  {width: 50%; left: 0;}
+    100% {width: 70%; left: 0;}
+}
+@keyframes reveal_60 {
+    0%   {width: 0;    left: 0;}
+    50%  {width: 20%;  left: 0;}
+    80%  {width: 40%; left: 0;}
+    100% {width: 60%; left: 0;}
+}
+
+
 
 /*myProject*/
-#myProject {display: flex; align-items: center;}
-#myProject > div {}
-.project_wrap {width: 50%; height: 100%; margin: 0 auto; padding: 2em; box-sizing: border-box; background: #111;}
+#myProject {
+    display: flex; align-items: center;
+}
+#myProject > div > div >div {width: 33.333%;}
+.project_wrap {
+    width: 90%; 
+    height: 100%; 
+    margin: 0 auto; 
+    padding: 2em; 
+    box-sizing: border-box; 
+    background: #111;
+}
 .project_img {width: 100%;}
 
 .project_desc {width: 100%; text-align: center;}
 .project_desc h3 {font-size: 2vh;}
-.project_desc a {display: block; width: 100px; height: 40px; margin: 0 auto; background: #111;  color: #fff; line-height: 40px; font-size: 1vw;}
+.project_desc a {
+    display: block; 
+    width: 100px; height: 40px; 
+    margin: 0 auto; background: #111;
+    color: #fff; 
+    line-height: 40px; 
+    font-size: 1vw;
+}
 
 
 /*info*/
-.info_wrap {width: 100%; height: 100%; background: #111; position: relative;}
-.left_info {position: absolute; width: 50%; height: 100%; top: 0; left: 0; background: #222; padding: 10% 5% 0; box-sizing: border-box;}
+#myInfo {}
+.info_wrap {
+    position: relative;
+    width: 100%; height: 100%; 
+    background: #111; 
+}
+
+/*.left_info*/
+.left_info {
+    position: absolute; 
+    top: 0; left: 0; 
+    width: 50%; height: 100%; 
+    background: #222; 
+    padding: 10% 5% 0; 
+    box-sizing: border-box;
+}
 .left_info h2 {font-size: 3vw;}
-.left_info .input_cont {width: 100%; height: 80%; padding: 2em; box-sizing: border-box;}
 
-.left_info .input_cont ul li {display: flex; align-items: center; margin: 1em;}
-.left_info .input_cont ul li a {display: block;}
-.left_info .input_cont ul li span {width: 20%; display: inline-block; margin-right: 5%;  font-size: 2vh;}
-.left_info .input_cont ul li input {width: 75%; height: 2vh; font-size: 1vw; overflow: scroll;}
-.left_info .input_cont ul li:last-child input {width: 100%; height: 30vh;}
-
-.input_cont {position: relative;}
-.input_cont > input {width: 20%; height: 60px; font-size: 1vw; text-align: center; line-height: 60px; background: #111; color: #fff; position: absolute; bottom: 10%; left: 50%; margin-left: -10%;}
+.input_cont {
+    position: relative; 
+    width: 100%; height: 80%; 
+    padding: 2em; 
+    box-sizing: border-box;
+}
+.input_cont > input {
+    width: 20%; 
+    height: 60px; 
+    font-size: 1vw; 
+    text-align: center; 
+    line-height: 60px; 
+    background: #111; 
+    color: #fff; 
+    position: absolute; 
+    bottom: 10%; left: 50%; 
+    margin-left: -10%;
+}
 .input_cont > input:hover {background: rgba(255,255,255,0.4);}
 
-.right_info {position: absolute; width: 50%; height: 100%; top: 0; right: 0; background: #333;}
+.input_cont ul li {
+    display: flex; 
+    align-items: center; 
+    margin: 1em;
+}
+.input_cont ul li a {
+    display: block;
+}
+.input_cont ul li span {
+    width: 20%; 
+    display: inline-block; 
+    margin-right: 5%;  
+    font-size: 2vh;
+}
+.input_cont ul li input {
+    width: 75%; height: 2vh; 
+    font-size: 1vw; 
+    overflow: scroll;
+}
+.input_cont ul li:last-child input {width: 100%; height: 30vh;}
 
-/*
-.info_wrap {width: 70%; height: 100vh; margin: 0 auto; display: flex; align-items: center; background: #999;}
-.info_wrap ul {width: 100%;}
-.info_wrap ul li {float: left; width: 25%;}
-.info_wrap ul li a {display: block; font-size: 1vw;}
-.info_wrap ul li img {width: 50%; display: block;}
-*/
+
+/*right_info*/
+.right_info {
+    position: absolute; 
+    width: 50%; height: 100%; 
+    top: 0; right: 0; 
+    background: #333;
+}
 
 /*paraNav*/
+.paraLeft {
+    position: fixed;
+    top: 20px; left: 20px;
+    z-index: 1000;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}
+.paraLeft a {
+    display: block;
+    font-size: 0;
+    width: 80px; height: 80px;
+    background-image: url(../images/logo_white.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.paraLeft.active {
+    border: 1px solid #dbdbdb;
+    box-sizing: border-box;
+}
+.paraLeft.active a {
+    background-image: url(../images/logo_gray.png);
+}
+
 .paraNav {
     position: fixed;
     right: 20px; top: 20px;
@@ -110,4 +366,5 @@
     color: #000;
     border-radius: 50%;
 }
+
 

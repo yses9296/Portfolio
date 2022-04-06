@@ -1,7 +1,7 @@
 //MouseEffect
 const cursor = $(".cursor");
 $(window).mousemove(function(e){
-    cursor.css({left: e.pageX-15, top: e.pageY-15});
+    gsap.to(cursor, {duration: 0.2, left: e.pageX-5, top: e.pageY-5});
 });
 
 //MouseEffect - Hover Action

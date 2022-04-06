@@ -20,6 +20,9 @@
         <div class="cursor"></div>
         <!-- //cursor -->
         <!-- paraInfo -->
+        <div class="paraLeft">
+            <a href="#">Logo</a>
+        </div>
         <div class="paraNav">
             <ul>
                 <li class="active"><a href="#mainPage">Main</a></li>
@@ -39,16 +42,21 @@
         <!-- //main_page -->
         
         <!-- myProfile -->
-        <section id="myProfile" class="content_item">
+        <section id="myProfile" class="content_item clearfix">
             <div class="profile_left">
-                <img src="assets/images/eunseo_profile_img.jpg" alt="eunseo_profile_img">
+               <div class="pImg">
+                    <img src="assets/images/eunseo_profile_img.jpg" alt="eunseo_profile_img">
+               </div>
             </div>
             
             <div class="profile_right">
                 <div class="profile_info">
-                    <h2>최은서 Eunseo Choi</h2>
+                    <h2><strong>0</strong>에서 <strong>무한</strong>으로 끌어올릴 수 있는 인재</h2>
                     <p>
-
+                        세상을 넓게 보는 시야로 다양한 웹을 만들고 싶은 신입 최은서입니다. <br>
+                        누구보다 강한 책임감을 가지고 끝까지 완주하려고 해요. <br>
+                        한 번 빠지면 시간 가는줄 모르고 작업에 몰두하곤 한답니다! <br>
+                        아직 많이 미숙한 부분이 많지만, 빠른 습득력과 이해력으로 업무를 센스있게 마무리할 수 있어요 :&#41;
                     </p>
                 </div>
                 <div class="additional_info">
@@ -66,8 +74,34 @@
         <section id="mySkill" class="content_item">
             <div class="skill_warp">
                 <ul>
-                    <li><span></span></li>
+                    <li>HTML <span class="reveal rv_01"></span></li>
+                    <li>CSS <span class="reveal rv_02"></span></li>
+                    <li>javascript/jQuery <span class="reveal rv_03"></span></li>
+                    <li>Photoshop <span class="reveal rv_04"></span></li>
+                    <li>illustrator <span class="reveal rv_05"></span></li>
+                    <li>C# <span class="reveal rv_06"></span></li>
+                    <li>SQL <span class="reveal rv_07"></span></li>
                 </ul>
+<!--
+               <ul class="title">
+                    <li>HTML</li>
+                    <li>CSS </li>
+                    <li>javascript/jQuery</li>
+                    <li>Photoshop</li>
+                    <li>illustrator</li>
+                    <li>C#</li>
+                    <li>SQL</li>
+                </ul>
+                <ul class="graph">
+                    <li><span class="reveal rv_01"></span></li>
+                    <li><span class="reveal rv_02"></span></li>
+                    <li><span class="reveal rv_03"></span></li>
+                    <li><span class="reveal rv_04"></span></li>
+                    <li><span class="reveal rv_05"></span></li>
+                    <li><span class="reveal rv_06"></span></li>
+                    <li><span class="reveal rv_07"></span></li>
+                </ul>
+-->
             </div>
         </section>
         <!-- //mySkill -->
@@ -76,7 +110,7 @@
             <div class="project_wrap">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide project_cont">
+                        <div class="swiper-slide">
                             <div class="project_img">
                                 <img src="assets/images/webStandards.png" alt="webStandards">
                             </div>
@@ -157,6 +191,8 @@
 <!--    <scrip src="assets/js/gsap.min.js"></scrip>-->
     <script src="assets/js/slick.min.js"></script> 
     <script src="assets/js/swiper.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/mouseEffect.js"></script>
 
