@@ -1,0 +1,41 @@
+
+/*media*/
+@media (max-width: 1440px){
+    .paraNav {padding: 10px 15px;}
+    .paraNav li a {width: 80px; height: 25px; line-height: 25px;}
+}
+
+/*임시*/
+@media (max-width: 1330px){
+    .content_item {padding: 1em;}
+    .content_item h1 {font-size: 2vh;}
+    
+    .paraLeft a {width: 60px; height: 60px;}
+/*    .paraNav {padding: 10px 10px;}*/
+    .paraNav li a {width: 70px; height: 25px; line-height: 25px;}
+    #mainPage article {width: 700px; height: 105px; font-size: 60px; margin-left: -350px; margin-top: -53px;}
+    #mainPage article.back {margin-top: -58px; margin-left: -345px;}
+    
+    .profile_left {width: 100%; height: 40%; padding-top: 10%; box-sizing: border-box;}
+    .profile_right {width: 100%; height: 60%;}
+    
+    .profile_info {height: 50%;}
+    .profile_left .pImg {height: 100%; display: flex; align-items: center;}
+    .profile_left .pImg img {display: block;}
+    .profile_info h2 {font-size: 2.7vw;}
+    .profile_info p {font-size: 1.6vw; line-height: 3em;}
+    .additional_info {height: 50%; font-size: 1.6vw; padding: 0 20%;}
+    .additional_info ul li {font-size: 1.5vw;}
+    
+    
+    
+    .skill_warp {width: 80vw;}
+    .skill_warp ul li {font-size: 25px;}
+    
+    .left_info {padding: 10% 2% 0px;}
+    .input_cont {padding: 1em;}
+    .input_cont ul li span{font-size: .9vh;}
+    .input_cont > input {bottom: 30%;}
+    
+    .ru_info a {font-size: 2.5vh;}
+}

@@ -34,6 +34,12 @@
     background-color: rgba(219, 249, 255, 0.3);
 }
 
+.content_item h1 {
+    width: 60vw; height: 5vh;
+    font-size: 4vh; color: #999;
+    padding: 1em 0;
+}
+
 /*mainPage*/
 #mainPage {position: relative;}
 #mainPage article {
@@ -131,12 +137,6 @@
     align-items: center; 
     justify-content: center;
     flex-direction: column;
-}
-
-#mySkill h1 {
-    width: 60vw; height: 5vh;
-    font-size: 4vh; color: #999;
-    padding: 1em 0;
 }
 
 .skill_warp {
@@ -260,17 +260,21 @@
 
 /*myProject*/
 #myProject {
-    display: flex; align-items: center;
+    display: flex; align-items: center; flex-direction: column;
 }
 #myProject > div > div >div {width: 33.333%;}
+
 .project_wrap {
     width: 90%; 
     height: 100%; 
     margin: 0 auto; 
     padding: 2em; 
     box-sizing: border-box; 
-    background: #111;
+    background: #fff;
+    display: flex; 
+    justify-content: center;
 }
+/* //swiper.js
 .project_img {width: 100%;}
 
 .project_desc {width: 100%; text-align: center;}
@@ -283,6 +287,24 @@
     line-height: 40px; 
     font-size: 1vw;
 }
+*/
+.project_wrap ul {
+    display: flex;
+    justify-content: center;
+}
+.project_wrap ul li {width: 10%; height: auto; display: inline-block; margin: 0 5%;}
+.project_wrap ul li:first-child {margin-left: 0;}
+.project_wrap ul li:last-child {margin-right: 0;}
+.project_wrap ul li a {display: block;}
+.project_wrap ul li a img {width: 100%;}
+.project_wrap ul li a span {
+    display: block; 
+    width: 100%; 
+    padding-top: 1em; 
+    color: #333;
+    font-size: 1vw; 
+    text-align: center; 
+    word-break: keep-all;}
 
 
 /*info*/
@@ -384,6 +406,7 @@
     z-index: 100;
 }
 .rd_info .github:hover {opacity: .6;}
+
 /*paraNav*/
 .paraLeft {
     position: fixed;
@@ -434,5 +457,3 @@
     color: #000;
     border-radius: 50%;
 }
-
-
